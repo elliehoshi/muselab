@@ -1,0 +1,12 @@
+<h1> Discover Ideas </h1>
+<h4>Lorem ipsum lorem ipsum!</h4>
+
+<div class="browse">
+	<% @ideas.each do |i| %>
+	<div class="ideas col-xs-12  col-sm-6 col-md-4">
+    <h3 class="glyphicon glyphicon-flash"></h3><br>
+    <h3> <%= link_to i.title, i %> </h3>
+		<%= button_to 'X', i, {method: "delete"} %>
+	</div>
+	<% end %>
+</div>

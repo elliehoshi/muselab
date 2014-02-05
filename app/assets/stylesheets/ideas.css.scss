@@ -1,0 +1,42 @@
+.container-fluid {
+	background-color: gold;
+}
+$basewidth: 400px;
+$maincolor: #6f6;
+$mainfont: helvetica;
+
+.browse {
+	background-color: #ddd;
+	width: $basewidth / 960px * 100%;
+	margin: 0 auto;
+
+	h1 {
+		text-align: center;
+		font-family: $mainfont;
+		padding-top: 35px;
+	}
+
+	.box {
+		padding: 5px;
+	}
+
+	.episode {
+		background-color: darken($maincolor, 30%);
+		border-top: 3px solid darken($maincolor, 60%);
+		margin: 15px 0px 0px;
+		@extend .box;
+	}
+
+	.details {
+		background-color: $maincolor;
+		border-bottom: 3px solid darken($maincolor, 60%);
+		@extend .box;
+	}
+
+
+
+
+
+}
+
+@import "bootstrap";
