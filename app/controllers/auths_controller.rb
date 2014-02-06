@@ -1,5 +1,7 @@
 class AuthsController < ApplicationController
 
+	before_action :authenticate_user, only: [:destroy]
+
 	def new
 		if current_user
 			redirect_to ideas_path
