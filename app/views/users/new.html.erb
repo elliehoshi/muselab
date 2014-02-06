@@ -1,0 +1,8 @@
+<div class="createuser">
+	<h1>Create Your Account</h1>
+	<%= form_for @user do |user| %>
+		<%= user.text_field :username, :placeholder => "Enter your username" %><br>
+		<%= user.password_field :password, :placeholder => "Enter password" %><br>
+		<%= user.submit "Submit" %>
+	<% end %>
+</div>

@@ -2,8 +2,12 @@ Ideally::Application.routes.draw do
   # get 'ideas' => 'ideas#index', as: "ideas"
   # get 'ideas/:id' => 'ideas#show', as: 'idea'
   # delete 'ideas/:id' => 'ideas#destroy'
+
   resources :ideas, only:[:index, :new, :show, :create, :destroy]
   root 'ideas#welcome'
+
+  resources :users, only:[:new, :create]
+  resources :auths, only:[:new, :create, :destory]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
