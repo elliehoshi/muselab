@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 gem "mongoid", github: "mongoid/mongoid"
+gem 'rails_12factor'
 
 gem 'bcrypt-ruby', github: 'codahale/bcrypt-ruby'
 
