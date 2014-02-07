@@ -8,8 +8,8 @@ Ideally::Application.routes.draw do
 
   post 'ideas/:id/edit' => 'ideas#update'
 
-  resources :users, only:[:new, :create]
-  resources :auths, only:[:new, :create, :destory]
+  resources :users
+  resources :auths
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
