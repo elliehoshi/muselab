@@ -22,8 +22,8 @@ class AuthsController < ApplicationController
 				render :new
 			end
 		else
-		# 	@user = User.find_by(username: params[:user][:username])
-			flash.now[:error] = "try again error in auths AuthsController"
+			@user = User.new(username: params[:user][:username])
+			flash.now[:error] = "try again"
 		end
 	end
 
