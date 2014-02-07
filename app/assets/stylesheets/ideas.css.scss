@@ -1,5 +1,5 @@
 .container-fluid {
-	background-color: gold;
+	background-color: rgba(46, 41, 53, 1);
 }
 
 $basewidth: 400px;
@@ -17,7 +17,7 @@ $mainfont: helvetica;
 		padding-top: 35px;
 	}
 
-	.box {
+/*	.box {
 		padding: 5px;
 	}
 
@@ -32,7 +32,7 @@ $mainfont: helvetica;
 		background-color: $maincolor;
 		border-bottom: 3px solid darken($maincolor, 60%);
 		@extend .box;
-	}
+	}*/
 
 
 .img-thumbnail2 {
