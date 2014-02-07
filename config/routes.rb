@@ -3,8 +3,10 @@ Ideally::Application.routes.draw do
   # get 'ideas/:id' => 'ideas#show', as: 'idea'
   # delete 'ideas/:id' => 'ideas#destroy'
 
-  resources :ideas, only:[:index, :new, :show, :create, :destroy]
+  resources :ideas
   root 'ideas#welcome'
+
+  post 'ideas/:id/edit' => 'ideas#update'
 
   resources :users, only:[:new, :create]
   resources :auths, only:[:new, :create, :destory]
