@@ -17,5 +17,15 @@
 	<%= @idea.tag %>
 </p>
 
-<%= link_to 'Edit', edit_idea_path(@idea) %>
-<%= button_to 'X', @idea, {method: "delete"} %>
+<button type="button" class="btn btn-info">
+	<span class="glyphicon glyphicon-pencil">
+	<%= link_to 'Edit', edit_idea_path(@idea) %> 
+	</span>
+</button>
+
+<button type="button" class="btn btn-danger">
+	<span class="glyphicon glyphicon-remove">
+	<%= link_to 'Delete', @idea, {method: "delete"} %>
+	</span> 
+</button>
+
