@@ -1,5 +1,28 @@
 <h1> Discover Ideas </h1>
 <h4>Lorem ipsum lorem ipsum!</h4>
+<br>
+
+<!--   def index
+    if params[:stuff] == nil
+        @ideas = Idea.all
+      elsif params[:stuff] == "web"
+        @ideas = Category.find_by(name: "Web").ideas
+      else
+        @ideas = Idea.where(category_name: "Design")
+      end
+
+      @stuff = params[:stuff]
+  end -->
+
+<div class="browse">
+  <ul class="nav nav-pills">
+    <li class="active"><%= link_to 'All', ideas_path %></li>
+    <li class="active"><%= link_to 'Web', ideas_path(stuff: "web") %></li>
+    <li class="active"><%= link_to 'Design', ideas_path(stuff: "design") %></li>
+    <li class="active"><a href="#">Art</a></li>
+    <li class="active"><a href="#">Tech</a></li>
+  </ul>
+</div><br>
 
 <div class="browse">
   <% @ideas.each do |i| %>
@@ -16,3 +39,5 @@
   </div>
   <% end %>
 </div>
+
+ <%#= link_to 'Show Everything', items_path(stuff: true) %>

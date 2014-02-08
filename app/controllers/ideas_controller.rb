@@ -1,7 +1,20 @@
 class IdeasController < ApplicationController
+	
 	def index
-		@ideas = Idea.all
-	end
+		if params[:stuff] == nil
+	      @ideas = Idea.all
+	    elsif params[:stuff] == "web"
+	      @ideas = Category.find_by(name: "Web").ideas
+	    elsif params[:stuff] == "design"
+	      @ideas = Category.find_by(name: "Design").ideas
+	    end
+
+	    @stuff = params[:stuff]
+  end
+
+	# def index
+	# 	@ideas = Idea.all
+	# end
 
 	def new
 		@idea = Idea.new
@@ -33,5 +46,11 @@ class IdeasController < ApplicationController
 		@idea = Idea.find(params[:id]).destroy
 		redirect_to ideas_path
 	end
+
+	private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def idea_params
+      params.require(:idea).permit(:title, :category, :blurb, :tag)
+    end
 
 end
