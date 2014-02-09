@@ -48,7 +48,6 @@ class IdeasController < ApplicationController
 	end
 
 	private
-    # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
       params.require(:idea).permit(:title, :category, :blurb, :tag)
     end
