@@ -33,6 +33,7 @@
       </div>
       <div class="panel body">
         <h3> <%= link_to i.title, i %> </h3>
+        <p> Submitted by: <%= i.user.username %></p>
       </div>
     </div>
     <%#= button_to 'X', i, {method: "delete"} %>

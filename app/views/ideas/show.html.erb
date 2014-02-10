@@ -17,6 +17,11 @@
 	<%= @idea.tag %>
 </p>
 
+<p>
+<strong>Submitted by:</strong> 
+<%= @idea.user.username %>
+</p>
+
 <button type="button" class="btn btn-info">
 	<span class="glyphicon glyphicon-pencil">
 	<%= link_to 'Edit', edit_idea_path(@idea) %> 

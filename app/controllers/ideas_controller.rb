@@ -17,7 +17,9 @@ class IdeasController < ApplicationController
 	# end
 
 	def new
-		@idea = Idea.new
+		if current_user
+			@idea = current_user.ideas.new
+		end
 	end
 
 	def show
@@ -38,8 +40,8 @@ class IdeasController < ApplicationController
 	end	
 
 	def create
-		Idea.create(params[:idea].permit(:title, :category, :blurb, :tag))
-		redirect_to ideas_path
+			@idea = current_user.ideas.create(idea_params)
+			redirect_to ideas_path
 	end
 
 	def destroy
