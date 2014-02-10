@@ -8,3 +8,5 @@
 Idea.destroy_all
 
 Idea.create [{title:"Project 1"}, {title: "Project 2"}]
+
+

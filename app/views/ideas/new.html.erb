@@ -14,7 +14,11 @@
 			</select>
 			<br>
 			<!-- end test -->
-			<%#= idea.create :category, :placeholder => "Category" %><br>
+			<%#= f.select(:option, options_for_select([['Meet For:', 1], ['Coffee', 2], ['Alcohol', 3], ['Bars', 4], ['Food', 5]], disabled: true)) %>
+
+			<%#= idea.select :category, options_for_select(['Category:', 1], ['***']) => "Category" %><br>
+
+			<%= idea.select :category, Category.all.map{ |c| [c.name]}, :prompt => "Select One" %><br>
 
 			<%= idea.text_area :blurb, :class => 'form-control', :placeholder => "Description", :rows => "8" %>
 
