@@ -2,10 +2,6 @@
 	background-color: rgba(46, 41, 53, 1);
 }
 
-body {
-	background-color: rgba(73, 67, 81, 1);
-}
-
 #accentBackground {
 	background-color: rgba(73, 67, 81, 1);
 }
@@ -17,7 +13,6 @@ body {
 blue accent color rgba(74, 189, 146, 1)*/
 
 $basewidth: 400px;
-$maincolor: #6f6;
 
 .container {
 	text-align: center;
@@ -26,19 +21,19 @@ $maincolor: #6f6;
 .browse {
 	width: $basewidth / 960px * 100%;
 	margin: 0 auto;
-
-	h1 {
-		text-align: center;
-		padding-top: 35px;
-	}
-
-.img-thumbnail2 {
-	margin: 0 auto;
-	width: 100px;
-	height: 100px;
-}
-
-
 }
 
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+h1 {
+		text-align: center;
+		padding-top: 35px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(73, 67, 81, 1);
+		font-weight: bold;
+}
+
+body {
+	background-color: rgba(248, 248, 248, 1);
+}

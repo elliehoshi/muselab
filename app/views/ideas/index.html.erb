@@ -1,18 +1,6 @@
-<h1> Discover Ideas </h1>
+<h1> DISCOVER IDEAS </h1>
 <h4>Lorem ipsum lorem ipsum!</h4>
 <br>
-
-<!--   def index
-    if params[:stuff] == nil
-        @ideas = Idea.all
-      elsif params[:stuff] == "web"
-        @ideas = Category.find_by(name: "Web").ideas
-      else
-        @ideas = Idea.where(category_name: "Design")
-      end
-
-      @stuff = params[:stuff]
-  end -->
 
 <div class="browse">
   <ul class="nav nav-pills">
@@ -36,9 +24,6 @@
         <p> Submitted by: <%= i.user.username %></p>
       </div>
     </div>
-    <%#= button_to 'X', i, {method: "delete"} %>
   </div>
   <% end %>
 </div>
-
- <%#= link_to 'Show Everything', items_path(stuff: true) %>

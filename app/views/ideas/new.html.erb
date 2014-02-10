@@ -1,6 +1,7 @@
 <% if current_user %>
+
 <div class="createidea">	
-		<h1>Post Your Idea</h1>
+		<h1>POST YOUR IDEA</h1>
 		<%= form_for @idea do |idea| %>
 			<%= idea.text_field :title, :placeholder => "Enter Your Idea Name" %><br>
 			<br>CATEGORY TEST<br>
@@ -10,22 +11,19 @@
 			</select>
 			<br>
 			<!-- end test -->
-			<%= idea.text_field :category, :placeholder => "Category" %><br>
+			<%#= idea.create :category, :placeholder => "Category" %><br>
 			<%= idea.text_field :blurb, :placeholder => "blurb" %><br>
 			<%= idea.text_field :tag, :placeholder => "tag" %><br>
 		<%= idea.submit "submit" %>
 		<% end %>
-		
-		<br>
-
-		<div class="container">
-			<div class="col-md-6">
-				<textarea class="form-control" rows="3"></textarea>
-			</div>
-		</div>
 </div>
 
 <% else %>
-<h1>Please log in to contine</h1>
-<h3><%= link_to 'Log In', new_auth_path %> | <%= link_to 'Sign Up', new_user_path %></h3>
+<div class="container">
+	<div class="alert alert-danger">Please log in to continue</div>
+</div>
+
+<div class="btn btn-default btn-lg" role="button"><%= link_to 'Log In', new_auth_path %></div>
+
+<div class="btn btn-info btn-lg" role="button"><%= link_to 'Sign Up', new_user_path %></div>
 <% end %>
