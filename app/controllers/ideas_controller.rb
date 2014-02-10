@@ -7,6 +7,8 @@ class IdeasController < ApplicationController
 	      @ideas = Category.find_by(name: "Web").ideas
 	    elsif params[:stuff] == "design"
 	      @ideas = Category.find_by(name: "Design").ideas
+	    elsif params[:stuff] == "myideas"
+	      @ideas = current_user.ideas
 	    end
 
 	    @stuff = params[:stuff]
@@ -62,7 +64,7 @@ class IdeasController < ApplicationController
 
 	private
     def idea_params
-      params.require(:idea).permit(:title, :category_id, :blurb, :tag)
+      params.require(:idea).permit(:title, :category_id, :blurb, :tag, :created)
     end
 
 end

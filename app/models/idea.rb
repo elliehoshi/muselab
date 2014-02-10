@@ -1,5 +1,6 @@
 class Idea
   include Mongoid::Document
+  include Mongoid::Timestamps::Created
   field :name, type: String
   field :title, type: String
   field :blurb, type: String
