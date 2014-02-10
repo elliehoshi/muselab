@@ -2,7 +2,7 @@
 
 <div class="createidea">	
 		<h1>POST YOUR IDEA</h1>
-		<%= form_for @idea do |idea| %>
+		<%= simple_form_for @idea do |idea| %>
 
 		<div class="container show">
 			<%= idea.text_field :title, :class => 'form-control', :placeholder => "Enter Your Idea Name" %>
@@ -13,12 +13,8 @@
 				<option value="Design">Design</option>
 			</select>
 			<br>
-			<!-- end test -->
-			<%#= f.select(:option, options_for_select([['Meet For:', 1], ['Coffee', 2], ['Alcohol', 3], ['Bars', 4], ['Food', 5]], disabled: true)) %>
 
-			<%#= idea.select :category, options_for_select(['Category:', 1], ['***']) => "Category" %><br>
-
-			<%= idea.select :category, Category.all.map{ |c| [c.name]}, :prompt => "Select One" %><br>
+			<%= idea.association :category, as: :select, :prompt => "Select One" %><br>
 
 			<%= idea.text_area :blurb, :class => 'form-control', :placeholder => "Description", :rows => "8" %>
 

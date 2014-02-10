@@ -7,6 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Idea.destroy_all
 
-Idea.create [{title:"Project 1"}, {title: "Project 2"}]
+# Idea.create [{title:"Project 1"}, {title: "Project 2"}]
 
 
