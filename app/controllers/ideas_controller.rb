@@ -27,6 +27,7 @@ class IdeasController < ApplicationController
 	end
 
 	def edit
+		@idea = Idea.find(params[:id])
 	end
 
 	def update
@@ -41,13 +42,22 @@ class IdeasController < ApplicationController
 
 	def create
 			@idea = current_user.ideas.create(idea_params)
+			# Idea.create(params[:idea].permit(:title, :category, :blurb, :tag))
 			redirect_to ideas_path
 	end
 
 	def destroy
-		@idea = Idea.find(params[:id]).destroy
-		redirect_to ideas_path
+		if current_user
+			@idea = current_user.ideas.find(params[:id]).destroy
+			# @idea = Idea.find(params[:id]).destroy
+			redirect_to ideas_path
+		end
 	end
+
+	# def destroy
+	# 	@idea = Idea.find(params[:id]).destroy
+	# 	redirect_to ideas_path
+	# end
 
 	private
     def idea_params

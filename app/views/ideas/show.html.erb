@@ -22,6 +22,7 @@
 <%= @idea.user.username %>
 </p>
 
+<% if @idea.user == current_user %>
 <button type="button" class="btn btn-info">
 	<span class="glyphicon glyphicon-pencil">
 	<%= link_to 'Edit', edit_idea_path(@idea) %> 
@@ -33,4 +34,5 @@
 	<%= link_to 'Delete', @idea, {method: "delete"} %>
 	</span> 
 </button>
+<% end %>
 

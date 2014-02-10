@@ -30,6 +30,5 @@ class AuthsController < ApplicationController
 	def destroy
 		session[:user_id] = nil
 		redirect_to ideas_path
-		# flash [:notice] = "successfully signed out ya bishh"
 	end
 end
