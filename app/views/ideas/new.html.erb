@@ -3,19 +3,30 @@
 <div class="createidea">	
 		<h1>POST YOUR IDEA</h1>
 		<%= form_for @idea do |idea| %>
-			<%= idea.text_field :title, :placeholder => "Enter Your Idea Name" %><br>
+
+		<div class="container show">
+			<%= idea.text_field :title, :class => 'form-control', :placeholder => "Enter Your Idea Name" %>
+
 			<br>CATEGORY TEST<br>
-			<select>
+			<select class="form-control">
 				<option value="Art">Art</option>
 				<option value="Design">Design</option>
 			</select>
 			<br>
 			<!-- end test -->
 			<%#= idea.create :category, :placeholder => "Category" %><br>
-			<%= idea.text_field :blurb, :placeholder => "blurb" %><br>
-			<%= idea.text_field :tag, :placeholder => "tag" %><br>
-		<%= idea.submit "submit" %>
+
+			<%= idea.text_area :blurb, :class => 'form-control', :placeholder => "Description", :rows => "8" %>
+
+			<br>
+
+			<%= idea.text_field :tag, :class => 'form-control', :placeholder => "tag" %>
+
+			<br>
+				<%= idea.submit "submit", :class => 'form-control' %>
+
 		<% end %>
+	</div>
 </div>
 
 <% else %>

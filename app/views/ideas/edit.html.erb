@@ -1,21 +1,21 @@
-<h1> Edit Idea </h1>
+<h1> EDIT YOUR IDEA </h1>
 
-<%= form_for :idea do |f| %>
-<div class="field">
-<%= f.label :idea_title %>
-<%= f.text_field :title %>
+<div class="show">
+	<%= form_for :idea do |f| %>
+
+	<h3>Idea Title</h3>
+	<%= f.text_field :title, :class => 'form-control' %>
+
+	<h3>Description</h3>
+	<%= f.text_area :blurb, :class => 'form-control', :rows => "8" %>
+
+	<%#= f.label :idea_category_name %>
+	<%#= f.text_field :category_name %>
+
+	<br>
+	<div class="submit">
+	<%= f.submit "Save Edit", :class => 'form-control' %>
+	</div>
+
+	<% end %>
 </div>
-
-<div class="blurb">
-<%= f.label :idea_blurb %>
-<%= f.text_field :blurb %>
-</div>
-
-<%#= f.label :idea_category_name %>
-<%#= f.text_field :category_name %>
-
-<div class="submit">
-<%= f.submit "Save Edit" %>
-</div>
-
-<% end %>
