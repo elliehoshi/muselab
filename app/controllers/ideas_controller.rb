@@ -35,7 +35,7 @@ class IdeasController < ApplicationController
 	def update
 		@idea = Idea.find(params[:id])
 
-		if @idea.update_attributes(params[:idea].permit(:title, :category, :blurb, :tag))
+		if @idea.update(params[:idea].permit(:title, :category, :blurb, :tag))
 	redirect_to @idea
 		else
 			render 'edit'
@@ -61,10 +61,16 @@ class IdeasController < ApplicationController
 	# 	redirect_to ideas_path
 	# end
 
+	def upvote
+		@idea = Idea.find(params[:id])
+		@idea.upvotes = @idea.upvotes + 1
+		@idea.save
+		redirect_to ideas_path
+	end
 
 	private
     def idea_params
-      params.require(:idea).permit(:title, :category_id, :blurb, :tag, :created)
+      params.require(:idea).permit(:title, :category_id, :blurb, :tag, :created, :is_favorited)
     end
 
 end
