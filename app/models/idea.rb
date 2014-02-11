@@ -11,5 +11,7 @@ class Idea
   belongs_to :user
   has_and_belongs_to_many :tags
 
+  # has_many :acts_as_commentable
+
   validates :title, length: { maximum: 30 } 
 end

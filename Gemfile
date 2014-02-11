@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem "mongoid", github: "mongoid/mongoid"
 gem 'rails_12factor'
-
+gem 'acts_as_commentable'
 gem 'bcrypt-ruby', github: 'codahale/bcrypt-ruby'
 
 # Use SCSS for stylesheets
@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
+gem "d3-rails"
 gem 'simple_form'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

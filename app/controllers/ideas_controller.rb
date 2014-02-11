@@ -36,7 +36,7 @@ class IdeasController < ApplicationController
 		@idea = Idea.find(params[:id])
 
 		if @idea.update(params[:idea].permit(:title, :category, :blurb, :tag))
-	redirect_to @idea
+		redirect_to @idea
 		else
 			render 'edit'
 		end
