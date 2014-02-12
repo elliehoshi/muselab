@@ -1,7 +1,11 @@
 <body>
 
-	<div id="canvas">
-	</div>
+	
+		<a href="#" data-toggle="tooltip" title="Default tooltip">
+			<div id="canvas">
+			</div>
+		</a>
+	
 
 	<script type="text/javascript">
 
@@ -41,7 +45,7 @@
 			  console.log(catCount);
 
 			  var vis = new SimpleVis("#canvas", catCount );
-
+			  $('#element').tooltip('show')
 		for(var j=0; j<4; j++){
 			$("#bubble-" + j).on("click", function() {
 		    window.location = this.getAttribute("data-questionurl");
