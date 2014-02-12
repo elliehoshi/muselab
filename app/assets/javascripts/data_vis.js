@@ -18,7 +18,7 @@ SimpleBubble = function(d, id, c) {
 SimpleBubble.prototype.init = function() {
   /* Elements that make up the bubbles display*/
   this.el = $("<div class='bubble' id='bubble-" + this.id + "'></div>");
-  this.elFill = $("<div class='bubbleFill'>category</div>");
+  this.elFill = $("<div class='bubbleFill'></div>");
   this.el.append(this.elFill);
 
   /* Attach mouse interaction to root element */
@@ -27,8 +27,8 @@ SimpleBubble.prototype.init = function() {
   this.el.on('mouseout', $.proxy(this.hideToolTip, this));
 
   /* Set CSS of Elements  */
-  this.radius = this.data;
-  this.boxSize = this.data * 2;
+  this.radius = this.data * 8;
+  this.boxSize = this.data * 16;
 
   this.elFill.css({
     width: this.boxSize,
@@ -124,12 +124,3 @@ SimpleVis.prototype.setBubbleLocation = function(bubble, alpha, centers) {
   bubble.y = bubble.y + (center.y - bubble.y) * (0.112) * alpha;
   bubble.x = bubble.x + (center.x - bubble.x) * (0.112) * alpha;
 };
-
-// $(document).ready(function() {
-//   // var vis = new SimpleVis("#canvas", [12,33,20,40,60,10,25,44,13,23,14,25,8]);
-
-//   var visArray = [];
-  
-//   var vis = new SimpleVis("#canvas", );
-
-// });

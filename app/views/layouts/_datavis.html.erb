@@ -1,8 +1,3 @@
-<head>
-<%#= stylesheet_link_tag "datavis", media: "all", "data-turbolinks-track" => true %>
-<%#= javascript_include_tag "data_vis", "data-turbolinks-track" => true %>
-	
-</head>
 <body>
 
 	<div id="canvas"></div>
@@ -10,15 +5,13 @@
 	<script type="text/javascript">
 
 		$(document).ready(function() {
-  // var vis = new SimpleVis("#canvas", [12,33,20,40,60,10,25,44,13,23,14,25,8]);
 
   var visArray = [];
   
   <% @categories.each do |c| %>
-  	// <% c.ideas.each do |i| %>
-  	// console.log('<%= c.name %>');
+  	<% c.ideas.each do |i| %>
 	  visArray.push( "<%= c.name %>");
-  	// <% end %>
+  	<% end %>
   <% end %>
   console.log(visArray);
 
