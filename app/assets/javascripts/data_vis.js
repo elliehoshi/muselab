@@ -19,7 +19,14 @@ SimpleBubble.prototype.init = function() {
   /* Elements that make up the bubbles display*/
   this.el = $("<div class='bubble' id='bubble-" + this.id + "'></div>");
   this.elFill = $("<div class='bubbleFill'></div>");
+  
+  this.el[0].setAttribute("id","bubble-" + this.id);
+  this.el[0].setAttribute("data-questionurl","ideas");
+
   this.el.append(this.elFill);
+
+
+
 
   /* Attach mouse interaction to root element */
   /* Note use of $.proxy to maintain context */
@@ -74,7 +81,7 @@ SimpleVis = function(container,d) {
   this.bin = d3.scale.ordinal().range([0, 1, 2]);
 
   this.bubbleCharge = function(d) {
-    return -Math.pow(d.radius,1) * 10;
+    return -Math.pow(d.radius,1) * 2;
   };
 
   this.init();
@@ -105,7 +112,7 @@ SimpleVis.prototype.init = function() {
   /* Setup force layout */
   this.force = d3.layout.force()
     .nodes(this.bubbles)
-    .gravity(0)
+    .gravity(.2)
     .charge(this.bubbleCharge)
     .friction(0.87)
     .size([this.width, this.height])
@@ -124,3 +131,4 @@ SimpleVis.prototype.setBubbleLocation = function(bubble, alpha, centers) {
   bubble.y = bubble.y + (center.y - bubble.y) * (0.112) * alpha;
   bubble.x = bubble.x + (center.x - bubble.x) * (0.112) * alpha;
 };
+

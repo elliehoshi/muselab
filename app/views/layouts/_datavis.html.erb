@@ -1,46 +1,53 @@
 <body>
 
-	<div id="canvas"></div>
+	<div id="canvas">
+	</div>
 
 	<script type="text/javascript">
 
 		$(document).ready(function() {
 
-  var visArray = [];
-  
-  <% @categories.each do |c| %>
-  	<% c.ideas.each do |i| %>
-	  visArray.push( "<%= c.name %>");
-  	<% end %>
-  <% end %>
-  console.log(visArray);
+			  var visArray = [];
+			  
+			  <% @categories.each do |c| %>
+			  	<% c.ideas.each do |i| %>
+				  visArray.push( "<%= c.name %>");
+			  	<% end %>
+			  <% end %>
+			  console.log(visArray);
 
-  var catCount = [];
+			  var catCount = [];
 
-  visArray.sort();
-  var current = null;
-  var cnt = 0;
-  for (var i = 0; i < visArray.length; i++) {
-      if (visArray[i] != current) {
-          if (cnt > 0) {
-              console.log(current + ' comes --> ' + cnt + ' times<');
-              catCount.push(cnt);
-          }
-          current = visArray[i];
-          cnt = 1;
-      } else {
-          cnt++;
-      }
-  }
-  if (cnt > 0) {
-      console.log(current + ' comes --> ' + cnt + ' times');
-      catCount.push(cnt);
-  }
+			  visArray.sort();
+			  var current = null;
+			  var cnt = 0;
+			  for (var i = 0; i < visArray.length; i++) {
+			      if (visArray[i] != current) {
+			          if (cnt > 0) {
+			              console.log(current + ' comes --> ' + cnt + ' times<');
+			              catCount.push(cnt);
+			          }
+			          current = visArray[i];
+			          cnt = 1;
+			      } else {
+			          cnt++;
+			      }
+			  }
+			  if (cnt > 0) {
+			      console.log(current + ' comes --> ' + cnt + ' times');
+			      catCount.push(cnt);
+			  }
 
-  console.log(catCount);
+			  console.log(catCount);
 
-  var vis = new SimpleVis("#canvas", catCount );
+			  var vis = new SimpleVis("#canvas", catCount );
 
+		for(var j=0; j<4; j++){
+			$("#bubble-" + j).on("click", function() {
+		    window.location = this.getAttribute("data-questionurl");
+	    return false;
+			});
+		}
 	});
 
 	</script>
