@@ -14,10 +14,6 @@ class IdeasController < ApplicationController
 	    @stuff = params[:stuff]
   end
 
-	# def index
-	# 	@ideas = Idea.all
-	# end
-
 	def new
 		if current_user
 			@idea = current_user.ideas.new
@@ -44,6 +40,7 @@ class IdeasController < ApplicationController
 
 	def create
 			@idea = current_user.ideas.create(idea_params)
+
 			# Idea.create(params[:idea].permit(:title, :category, :blurb, :tag))
 			redirect_to ideas_path
 	end
@@ -66,6 +63,11 @@ class IdeasController < ApplicationController
 		@idea.upvotes = @idea.upvotes + 1
 		@idea.save
 		redirect_to ideas_path
+	end
+
+	# D3 TEST
+	def welcome
+		@categories = Category.all
 	end
 
 	private

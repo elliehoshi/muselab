@@ -1,10 +1,55 @@
 <head>
-<%= stylesheet_link_tag "datavis", media: "all", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "data_vis", "data-turbolinks-track" => true %>
+<%#= stylesheet_link_tag "datavis", media: "all", "data-turbolinks-track" => true %>
+<%#= javascript_include_tag "data_vis", "data-turbolinks-track" => true %>
 	
 </head>
 <body>
 
 	<div id="canvas"></div>
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+  // var vis = new SimpleVis("#canvas", [12,33,20,40,60,10,25,44,13,23,14,25,8]);
+
+  var visArray = [];
+  
+  <% @categories.each do |c| %>
+  	// <% c.ideas.each do |i| %>
+  	// console.log('<%= c.name %>');
+	  visArray.push( "<%= c.name %>");
+  	// <% end %>
+  <% end %>
+  console.log(visArray);
+
+  var catCount = [];
+
+  visArray.sort();
+  var current = null;
+  var cnt = 0;
+  for (var i = 0; i < visArray.length; i++) {
+      if (visArray[i] != current) {
+          if (cnt > 0) {
+              console.log(current + ' comes --> ' + cnt + ' times<');
+              catCount.push(cnt);
+          }
+          current = visArray[i];
+          cnt = 1;
+      } else {
+          cnt++;
+      }
+  }
+  if (cnt > 0) {
+      console.log(current + ' comes --> ' + cnt + ' times');
+      catCount.push(cnt);
+  }
+
+  console.log(catCount);
+
+  var vis = new SimpleVis("#canvas", catCount );
+
+	});
+
+	</script>
 
 </body>

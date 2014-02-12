@@ -1,4 +1,4 @@
-var colors = d3.scale.category20b();
+var colors = d3.scale.category20c();
 SimpleBubble = function(d, id, c) {
   this.data = d;
   this.id = id;
@@ -18,7 +18,7 @@ SimpleBubble = function(d, id, c) {
 SimpleBubble.prototype.init = function() {
   /* Elements that make up the bubbles display*/
   this.el = $("<div class='bubble' id='bubble-" + this.id + "'></div>");
-  this.elFill = $("<div class='bubbleFill'></div>");
+  this.elFill = $("<div class='bubbleFill'>category</div>");
   this.el.append(this.elFill);
 
   /* Attach mouse interaction to root element */
@@ -71,10 +71,10 @@ SimpleVis = function(container,d) {
   {x: 600, y:200}
   ];
 
-  this.bin = d3.scale.ordinal().range([0,1,2]);
+  this.bin = d3.scale.ordinal().range([0, 1, 2]);
 
   this.bubbleCharge = function(d) {
-    return -Math.pow(d.radius,1) * 8;
+    return -Math.pow(d.radius,1) * 10;
   };
 
   this.init();
@@ -121,16 +121,15 @@ SimpleVis.prototype.init = function() {
 
 SimpleVis.prototype.setBubbleLocation = function(bubble, alpha, centers) {
   var center = centers[this.bin(bubble.id)];
-  bubble.y = bubble.y + (center.y - bubble.y) * (0.115) * alpha;
-  bubble.x = bubble.x + (center.x - bubble.x) * (0.115) * alpha;
+  bubble.y = bubble.y + (center.y - bubble.y) * (0.112) * alpha;
+  bubble.x = bubble.x + (center.x - bubble.x) * (0.112) * alpha;
 };
 
-$(document).ready(function() {
-  var vis = new SimpleVis("#canvas", [12,33,20,40,60,10,25,44,13,23,14,25,8]);
+// $(document).ready(function() {
+//   // var vis = new SimpleVis("#canvas", [12,33,20,40,60,10,25,44,13,23,14,25,8]);
 
-  $("#move").on("click", function(e) {
-    vis.bin.range(vis.bin.range().reverse());
-    vis.force.resume();
-    return false;
-  });
-});
+//   var visArray = [];
+  
+//   var vis = new SimpleVis("#canvas", );
+
+// });
