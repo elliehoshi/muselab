@@ -115,3 +115,30 @@ li {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+body.homepage {
+	background-image: url(01.png);
+}
+
+.explore {
+	width: 200px;
+	height: 50px;
+	border: 1px solid white;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.explore:hover {
+	background-color: rgba(74, 189, 146, 1);
+	h4 {
+		color: orangered;
+	}
+}
+
+h4 {
+	font-family: 'Open Sans';
+	color: white;
+	text-align: center;
+	padding-top: 3px;
+}

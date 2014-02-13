@@ -73,7 +73,7 @@ SimpleVis.prototype.init = function() {
   this.canvas.css({
     width: this.width,
     height: this.height,
-    "background-color": "#eee",
+    // "background-color": "#eee",
     position: "relative"});
 
   /* Create Bubbles */
