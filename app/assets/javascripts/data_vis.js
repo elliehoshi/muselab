@@ -26,16 +26,23 @@ SimpleBubble.prototype.init = function() {
   this.el.append(this.elFill);
 
 
-
-
   /* Attach mouse interaction to root element */
   /* Note use of $.proxy to maintain context */
+
   this.el.on('mouseover', $.proxy(this.showToolTip, this));
   this.el.on('mouseout', $.proxy(this.hideToolTip, this));
 
+
+  /* TOOLTIP TEST */
+
+  // $(.proxy).tooltip('toggle');
+  this.el.on('toggle', $.proxy(this.tooltip, this));
+
+
+
   /* Set CSS of Elements  */
-  this.radius = this.data * 8;
-  this.boxSize = this.data * 16;
+  this.radius = this.data * 100;
+  this.boxSize = this.data * 20;
 
   this.elFill.css({
     width: this.boxSize,
@@ -46,9 +53,10 @@ SimpleBubble.prototype.init = function() {
 };
 
 SimpleBubble.prototype.showToolTip = function() {
+  console.log("hi");
   var toolWidth = 40;
   var toolHeight = 25;
-  this.tooltip =  $("<div class='tooltip'></div>");
+  this.tooltip =  $("<div class='tooltip'>xyz</div>");
   this.tooltip.html("<div class='tooltipFill'><p>" + this.data + "</p></div>");
   this.tooltip.css({
     left: this.x + this.radius /2,
@@ -60,6 +68,7 @@ SimpleBubble.prototype.showToolTip = function() {
 SimpleBubble.prototype.hideToolTip = function() {
   $(".tooltip").remove();
 };
+
 
 SimpleBubble.prototype.move = function() {
   this.el.css({top: this.y, left:this.x});
@@ -112,9 +121,9 @@ SimpleVis.prototype.init = function() {
   /* Setup force layout */
   this.force = d3.layout.force()
     .nodes(this.bubbles)
-    .gravity(.2)
+    .gravity(0)
     .charge(this.bubbleCharge)
-    .friction(0.87)
+    .friction(0.1)
     .size([this.width, this.height])
     .on("tick", function(e) {
       me.bubbles.forEach( function(b) {
@@ -128,7 +137,7 @@ SimpleVis.prototype.init = function() {
 
 SimpleVis.prototype.setBubbleLocation = function(bubble, alpha, centers) {
   var center = centers[this.bin(bubble.id)];
-  bubble.y = bubble.y + (center.y - bubble.y) * (0.112) * alpha;
-  bubble.x = bubble.x + (center.x - bubble.x) * (0.112) * alpha;
+  bubble.y = bubble.y + (center.y - bubble.y) * (0.02) * alpha;
+  bubble.x = bubble.x + (center.x - bubble.x) * (0.115) * alpha;
 };
 
