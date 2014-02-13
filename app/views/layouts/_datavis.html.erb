@@ -1,10 +1,8 @@
 <body>
 
 			<div id="canvas">
-
 			</div>
 		
-	
 
 	<script type="text/javascript">
 
@@ -24,11 +22,11 @@
 			  visArray.sort();
 			  var current = null;
 			  var cnt = 0;
-			  for (var i = 0; i < visArray.length; i++) {
+			  for (var i = 0; i <= visArray.length; i++) {
 			      if (visArray[i] != current) {
 			          if (cnt > 0) {
-			              console.log(current + ' comes --> ' + cnt + ' times<');
-			              catCount.push(cnt);
+			              console.log(current + ' comes --> ' + cnt + ' times');
+			              catCount.push({name: current, num: cnt});
 			          }
 			          current = visArray[i];
 			          cnt = 1;
@@ -38,33 +36,39 @@
 			  }
 			  if (cnt > 0) {
 			      console.log(current + ' comes --> ' + cnt + ' times');
-			      catCount.push(cnt);
+			      catCount.push([current, cnt]);
 			  }
 
-			  console.log(catCount);
+			  var catName = [];
+			 	var catNum = [];
 
-			  var vis = new SimpleVis("#canvas", catCount );
+			  for(var l=0; l<catCount.length; l++) {
+			  	catName.push(catCount[l].name);	
+			  	catNum.push(catCount[l].num);	
+			  }
+
+			  console.log(catName);
+			  console.log(catNum);
 			  
-		for(var j=0; j<4; j++){
+
+			  var vis = new SimpleVis("#canvas", catNum );
+			  
+		for(var j=0; j<7; j++){
 			$("#bubble-" + j).on("click", function() {
 		    window.location = this.getAttribute("data-questionurl");
 	    return false;
 			});
 		}
 
-		  /* Bootstrap Tooltip Test */
 
-		  // $('.bubbleFill').hover (
-  		// 	function() {
-  		// 	$('.bubbleFill').tooltip('toggle');
-  		// 	});
 
-		$('.bubbleFill').tooltip({
-			placement: "auto",
-			title: "<%= @categories.name %>",
-			trigger: "hover"
-		});
-			
+		for(var k=0; k<catCount.length; k++) {
+			$('#bubble-' + k).tooltip({
+				placement: "top",
+				title: "Category: " + catName[k] + ", " + "Count: " + catNum[k],
+				trigger: "hover"
+			});
+		}
 
 	});
 

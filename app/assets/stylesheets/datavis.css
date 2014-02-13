@@ -18,38 +18,9 @@
   fill: orange;
 }
 
-/*.tooltip {
-  position: absolute;
-  display: block;
-  height: 25px;
-  width: 40px;
-}
-
-.tooltipFill {
-  position: absolute;
-  display: block;
-}
-
-.tooltipFill p {
-  position: absolute;
-  display: block;
-  text-align: center;
-  background-color: #fff;
-  padding: 3px 10px 3px 10px;
-}*/
-
 #canvas {
   margin-left: auto;
   margin-right: auto;
-}
-
-.d3-tip {
-  line-height: 1;
-  font-weight: bold;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border-radius: 2px;
 }
 
 

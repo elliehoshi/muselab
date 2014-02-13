@@ -18,7 +18,7 @@ SimpleBubble = function(d, id, c) {
 SimpleBubble.prototype.init = function() {
   /* Elements that make up the bubbles display*/
   this.el = $("<div class='bubble' id='bubble-" + this.id + "'></div>");
-  this.elFill = $("<div class='bubbleFill'><p>" + this.data + "</p></div>");
+  this.elFill = $("<div class='bubbleFill'></div>");
   
   this.el[0].setAttribute("id","bubble-" + this.id);
   this.el[0].setAttribute("data-questionurl","ideas");
