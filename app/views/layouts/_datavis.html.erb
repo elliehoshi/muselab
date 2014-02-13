@@ -19,10 +19,10 @@
 
 			  var catCount = [];
 
-			  visArray.sort();
+			  // visArray.sort();
 			  var current = null;
 			  var cnt = 0;
-			  for (var i = 0; i <= visArray.length; i++) {
+			  for (var i = 0; i < visArray.length; i++) {
 			      if (visArray[i] != current) {
 			          if (cnt > 0) {
 			              console.log(current + ' comes --> ' + cnt + ' times');
@@ -36,7 +36,7 @@
 			  }
 			  if (cnt > 0) {
 			      console.log(current + ' comes --> ' + cnt + ' times');
-			      catCount.push([current, cnt]);
+			      catCount.push({name: current, num: cnt});
 			  }
 
 			  var catName = [];

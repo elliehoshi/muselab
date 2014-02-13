@@ -26,20 +26,6 @@ SimpleBubble.prototype.init = function() {
   this.el.append(this.elFill);
 
 
-  /* Attach mouse interaction to root element */
-  /* Note use of $.proxy to maintain context */
-
-  this.el.on('mouseover', $.proxy(this.showToolTip, this));
-  this.el.on('mouseout', $.proxy(this.hideToolTip, this));
-
-
-  /* TOOLTIP TEST */
-
-  // $(.proxy).tooltip('toggle');
-  this.el.on('toggle', $.proxy(this.tooltip, this));
-
-
-
   /* Set CSS of Elements  */
   this.radius = this.data * 100;
   this.boxSize = this.data * 20;
@@ -50,23 +36,6 @@ SimpleBubble.prototype.init = function() {
     left: -this.boxSize / 2,
     top: -this.boxSize / 2,
     "background-color": colors(this.data)});
-};
-
-SimpleBubble.prototype.showToolTip = function() {
-  console.log("hi");
-  var toolWidth = 40;
-  var toolHeight = 25;
-  this.tooltip =  $("<div class='tooltip'>xyz</div>");
-  this.tooltip.html("<div class='tooltipFill'><p>" + this.data + "</p></div>");
-  this.tooltip.css({
-    left: this.x + this.radius /2,
-    top: this.y + this.radius / 2
-    });
-  this.canvas.append(this.tooltip);
-};
-
-SimpleBubble.prototype.hideToolTip = function() {
-  $(".tooltip").remove();
 };
 
 
