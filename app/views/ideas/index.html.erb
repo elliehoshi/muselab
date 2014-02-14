@@ -24,9 +24,9 @@
   <div class="browse">
     <% @ideas.each do |i| %>
     <div class="col-xs-12  col-sm-6 col-md-4">
-      <div class="panel panel-default">
+      <div class="panel panel-info">
         <div id="test" class="panel-heading">
-          <h4 id="accent" class="glyphicon glyphicon-star-empty"></h4> 0 <%= i.is_favorite %>
+          <%= image_tag("inspire.svg", class: "img-circle img-thumbnail2") %>
         </div>
         <div class="panel body">
           <h5> <%= link_to i.title, i %> </h5>
