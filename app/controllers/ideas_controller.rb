@@ -21,15 +21,15 @@ class IdeasController < ApplicationController
 	end
 
 	def show
-		@idea = Idea.find(params[:id])
+		@idea = Idea.where(id: params[:id]).first
 	end
 
 	def edit
-		@idea = Idea.find(params[:id])
+		@idea = Idea.where(id: params[:id]).first
 	end
 
 	def update
-		@idea = Idea.find(params[:id])
+		@idea = Idea.where(id: params[:id]).first
 
 		if @idea.update(params[:idea].permit(:title, :category, :blurb, :tag))
 		redirect_to @idea
@@ -53,17 +53,13 @@ class IdeasController < ApplicationController
 		end
 	end
 
-	# def destroy
-	# 	@idea = Idea.find(params[:id]).destroy
+
+	# def upvote
+	# 	@idea = Idea.find(params[:id])
+	# 	@idea.upvotes = @idea.upvotes + 1
+	# 	@idea.save
 	# 	redirect_to ideas_path
 	# end
-
-	def upvote
-		@idea = Idea.find(params[:id])
-		@idea.upvotes = @idea.upvotes + 1
-		@idea.save
-		redirect_to ideas_path
-	end
 
 	# D3 TEST
 	def welcome
