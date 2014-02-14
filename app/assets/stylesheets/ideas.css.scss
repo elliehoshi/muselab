@@ -120,6 +120,13 @@ body.homepage {
 	background-image: url(01.png);
 }
 
+body.showpage {
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(shattered.png);
+  background-repeat: repeat;
+  background-position: center;
+}
 .explore {
 	width: 200px;
 	height: 50px;
