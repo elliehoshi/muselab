@@ -40,8 +40,6 @@ class IdeasController < ApplicationController
 
 	def create
 			@idea = current_user.ideas.create(idea_params)
-
-			# Idea.create(params[:idea].permit(:title, :category, :blurb, :tag))
 			redirect_to ideas_path
 	end
 
