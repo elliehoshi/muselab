@@ -37,11 +37,24 @@
 </div>
 
 <% else %>
-<div class="container">
 	<div class="alert alert-danger">Please log in to continue</div>
-</div>
 
-<div class="btn btn-default btn-lg" role="button"><%= link_to 'Log In', new_auth_path %></div>
+	<div class="browse">
+		<%= link_to new_auth_path do %>
+		<div class="well col-xs-6  col-sm-6 col-md-6">
+		<%= image_tag("login.svg", class: "img-circle img-thumbnail3") %>
+		
+		<br>
+		
+		<%= link_to 'Log In', new_auth_path, class: "btn btn-default btn-lg"%></div>
+		<% end %>
 
-<div class="btn btn-info btn-lg" role="button"><%= link_to 'Sign Up', new_user_path %></div>
-<% end %>
+		<div class="well col-xs-6  col-sm-6 col-md-6">
+		<%= image_tag("signup.svg", class: "img-circle img-thumbnail3") %>
+
+		<br>
+		<div class="btn btn-info btn-lg" role="button"><%= link_to 'Sign Up', new_user_path %></div>
+		</div>
+		<% end %>
+	</div>
+
