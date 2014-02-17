@@ -46,7 +46,6 @@ class IdeasController < ApplicationController
 	def destroy
 		if current_user
 			@idea = current_user.ideas.find(params[:id]).destroy
-			# @idea = Idea.find(params[:id]).destroy
 			redirect_to ideas_path
 		end
 	end

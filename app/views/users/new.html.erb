@@ -1,4 +1,6 @@
-	<h1>CREATE YOUR ACCOUNT</h1>
+<body class="continue">
+
+	<h1 class="accent">CREATE YOUR ACCOUNT</h1>
 <div class="container show">
 	<%= form_for @user do |user| %>
 		<%= user.text_field :username, :class => 'form-control', :placeholder => "Enter your username" %><br>
@@ -6,3 +8,5 @@
 		<%= user.submit "Submit", :class => 'form-control' %>
 	<% end %>
 </div>
+
+</body>
