@@ -22,7 +22,7 @@ SimpleBubble.prototype.init = function() {
   
   this.el[0].setAttribute("id","bubble-" + this.id);
   this.el[0].setAttribute("data-questionurl","ideas");
-
+  
   this.el.append(this.elFill);
 
 

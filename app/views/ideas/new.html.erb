@@ -8,19 +8,6 @@
 			<%= idea.text_field :title, :class => 'form-control', :placeholder => "Enter Your Idea Name" %>
 			<br>
 
-<!-- 			<br>CATEGORY TEST<br>
-			<select class="form-control">
-				<option value="Art">Art</option>
-				<option value="Design">Design</option>
-			</select>
-			<br> -->
-
-			<!-- <fieldset>
-				<legend>Select Category</legend>
-				<%#= idea.collection_check_boxes :category_id, Category.all, :id, :name %>
-			</fieldset> -->
-			
-
 			<%= idea.association :category, as: :select, :prompt => "Select One" %><br>
 
 
