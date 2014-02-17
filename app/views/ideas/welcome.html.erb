@@ -1,18 +1,30 @@
 <body class="homepage">
 <%= image_tag("muselablogo.png", class: "logo") %>
+<!-- <p class="welcometext">Where user needs inspire creators.</p> -->
   <!-- <h1 class="accent">D I S C O V E R  &nbsp; I D E A S</h1>
   <p><i>hover over a bubble to explore</i></p> -->
   <%= render partial: 'layouts/datavis' %>
- <!--  <p>Where user needs inspire creators.</p> -->
+ 
  <%= link_to ideas_path do %>
   <div class="explore">
   	<h4>GET INSPIRED</h4>
   </div>
   <% end %>
-  <!-- <div class="btn btn-default btn-lg" role="button"><%#= link_to 'Get Inspired', ideas_path %></div> -->
-<br><br>
-<%= image_tag("idea.svg", class: "img-circle img-thumbnail2") %>
-<%= image_tag("collab.svg", class: "img-circle img-thumbnail2") %>
-<%= image_tag("inspire.svg", class: "img-circle img-thumbnail2") %>
+ 
+<div class="browse">
+	<div class="well front col-xs-12  col-sm-12 col-md-4">
+		<%= image_tag("idea.svg", class: "img-circle img-thumbnail2") %>
+		<br>
+		<p class="welcometext"> Users always have needs for apps, websites and services that don't exist yet.</p>
+	</div>
+	<div class="well front col-xs-12  col-sm-12 col-md-4">
+		<%= image_tag("collab.svg", class: "img-circle img-thumbnail2") %>
+		<p class="welcometext"> Developers and creators always have a need to get inspiration from users.</p>
+	</div>
+	<div class="well front col-xs-12  col-sm-12 col-md-4">
+		<%= image_tag("inspire.svg", class: "img-circle img-thumbnail2") %>
+		<p class="welcometext"> Introducing MuseLab - the first platform where user needs inspire creators.</p>
+	</div>
+</div>
 
 </body>
