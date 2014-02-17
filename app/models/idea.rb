@@ -13,5 +13,5 @@ class Idea
 
   # has_many :acts_as_commentable
 
-  validates :title, length: { maximum: 30 } 
+  # validates :title, length: { maximum: 30 } 
 end

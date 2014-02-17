@@ -5,18 +5,49 @@
 <% else %> 
 <h1 class="accent"> DISCOVER IDEAS </h1>
 <br>
-
   <div class="browse">
-    <ul class="nav nav-pills">
-      <li class="btn btn-default btn-xs"><%= link_to 'All', ideas_path %></li>
-      <li class="btn btn-default btn-xs"><%= link_to 'Web', ideas_path(stuff: "web") %></li>
-      <li class="btn btn-default btn-xs"><%= link_to 'Design', ideas_path(stuff: "design") %></li>
-      <li class="btn btn-default btn-xs"><a href="#">Art</a></li>
-      <li class="btn btn-default btn-xs"><a href="#">Tech</a></li>
-      <li class="btn btn-default btn-xs"><a href="#">App</a></li>
-      <li class="btn btn-default btn-xs"><a href="#">Gaming</a></li>
-      <li class="btn btn-default btn-xs"><a href="#">eCommerce</a></li>
-    </ul>
+      <%= link_to ideas_path do %>
+      <button type="button" class="btn btn-default">
+      All
+      <% end %>
+      </button>
+
+      <%= link_to ideas_path(stuff: "web") do %>
+      <button type="button" class="btn btn-default">
+      Web
+      <% end %>
+      </button>
+
+      <%= link_to ideas_path(stuff: "design") do %>
+      <button type="button" class="btn btn-default">
+      Design
+      <% end %>
+      </button>
+
+      <%= link_to ideas_path(stuff: "tech") do %>
+      <button type="button" class="btn btn-default">
+      Tech
+      <% end %>
+      </button>
+
+      <%= link_to ideas_path(stuff: "app") do %>
+      <button type="button" class="btn btn-default">
+      App
+      <% end %>
+      </button>
+
+      <%= link_to ideas_path(stuff: "gaming") do %>
+      <button type="button" class="btn btn-default">
+      Gaming
+      <% end %>
+      </button>
+
+      <%= link_to ideas_path(stuff: "ecommerce") do %>
+      <button type="button" class="btn btn-default">
+      eCommerce
+      <% end %>
+      </button>
+
   </div><br>
 
   <% end %>

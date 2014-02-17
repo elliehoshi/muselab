@@ -7,6 +7,14 @@ class IdeasController < ApplicationController
 	      @ideas = Category.find_by(name: "Web").ideas
 	    elsif params[:stuff] == "design"
 	      @ideas = Category.find_by(name: "Design").ideas
+	    elsif params[:stuff] == "tech"
+	      @ideas = Category.find_by(name: "Tech").ideas
+	    elsif params[:stuff] == "app"
+	      @ideas = Category.find_by(name: "App").ideas
+	    elsif params[:stuff] == "gaming"
+	      @ideas = Category.find_by(name: "Gaming").ideas
+	    elsif params[:stuff] == "ecommerce"
+	      @ideas = Category.find_by(name: "eCommerce").ideas
 	    elsif params[:stuff] == "myideas"
 	      @ideas = current_user.ideas
 	    end

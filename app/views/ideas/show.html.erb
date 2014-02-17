@@ -3,22 +3,36 @@
 	<h1><%= @idea.title %></h1>
 </p>
 
-<% if @idea.user == current_user %>
-	<button type="button" class="btn btn-info">
-		<span class="glyphicon glyphicon-pencil">
-		<%= link_to 'Edit', edit_idea_path(@idea) %> 
-		</span>
-	</button>
 
-	<button type="button" class="btn btn-danger">
-		<span class="glyphicon glyphicon-remove">
-		<%= link_to 'Delete', @idea, {method: "delete"} %>
-		</span> 
-	</button>
-	<br><br>
-<% end %>
 
 <div class="show well" id="showidea">
+
+<% if @idea.user == current_user %>
+	<%= link_to edit_idea_path(@idea) do %>
+	<button type="button" class="btn btn-primary">
+		<span class="glyphicon glyphicon-pencil">
+		Edit
+		</span>
+	</button>
+	<% end %>
+
+	<%= link_to @idea, {method: "delete"} do %>
+	<button type="button" class="btn btn-danger">
+		<span class="glyphicon glyphicon-remove">
+		Delete
+		</span> 
+	</button>
+	<% end %>
+
+<% end %>
+
+ <%= link_to ideas_path do %>
+  <button type="button" class="btn btn-info">
+  	<span class="glyphicon glyphicon-chevron-left">
+  	Back
+  	</span>
+  </button>
+  <% end %>
 	<%= @idea.created_at %>
 
 	<h3>Category</h3>
@@ -34,4 +48,5 @@
 <%= @idea.user.username %>
 
 </div>
+
 </body>

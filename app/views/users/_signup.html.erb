@@ -1,0 +1,18 @@
+<!-- <div class="modal fade bs-modal-sm" id="signUp"tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <h3>Sign Up</h3>
+		<%#=form_for :user do |user|%>
+			<%#=user.text_field :username, :placeholder => "Enter your username", :class => "form-control" %><br>
+			<%#=user.password_field :password, :placeholder => "Enter password", :class => "form-control" %><br>
+		<%#= user.submit "Sign Up", :class => "btn btn-primary btn-block" %>
+		<%# end %>
+    </div>
+  </div>
+</div> -->
+
+<%= form_for :user, {url: new_user_path, method: 'post'} do |user| %>
+  <%= user.text_field :username, :placeholder => "Enter your username", class: "form-control" %><br>
+  <%= user.password_field :password, :placeholder => "Enter password", class: "form-control" %><br>
+  <%= user.submit "Sign Up!", class: "btn btn-success" %>
+<% end %>
