@@ -66,7 +66,6 @@ class IdeasController < ApplicationController
 	# 	redirect_to ideas_path
 	# end
 
-	# D3 TEST
 	def welcome
 		@categories = Category.all
 	end
