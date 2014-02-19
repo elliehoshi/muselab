@@ -4,7 +4,7 @@
 
 			</div>
 		
-
+<!-- Category and Idea Data for Bubble Visualization -->
 	<script type="text/javascript">
 
 		$(document).ready(function() {
@@ -53,7 +53,8 @@
 			  
 
 			  var vis = new SimpleVis("#canvas", catNum );
-			  
+
+// Link bubbles to ideas index on click
 		for(var j=0; j<7; j++){
 			$("#bubble-" + j).on("click", function() {
 		    window.location = this.getAttribute("data-questionurl");
@@ -62,7 +63,7 @@
 		}
 
 
-
+// Tooltip to show data
 		for(var k=0; k<catCount.length; k++) {
 			$('#bubble-' + k).tooltip({
 				placement: "auto",

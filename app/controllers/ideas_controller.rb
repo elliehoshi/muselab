@@ -1,5 +1,6 @@
 class IdeasController < ApplicationController
 	
+	# Ideas Index + Filter by Category
 	def index
 		if params[:stuff] == nil
 	      @ideas = Idea.all
@@ -66,6 +67,7 @@ class IdeasController < ApplicationController
 	# 	redirect_to ideas_path
 	# end
 
+	# For Bubble Data Visualization
 	def welcome
 		@categories = Category.all
 	end
