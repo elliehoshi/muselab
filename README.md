@@ -8,7 +8,10 @@
 <h3>Technologies Used</h3>
 <hr>
 * Ruby on Rails
+* MongoDB
 * D3.js
 * JavaScript
+* jQuery
+* Bootstrap
 * HTML5
 * CSS3
