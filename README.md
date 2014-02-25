@@ -15,3 +15,9 @@
 * Bootstrap
 * HTML5
 * CSS3
+
+<h6>Supplemental Technologies Used</h3>
+<hr>
+* Adobe Photoshop
+* Adobe Illustrator
+* Rhino 3D
