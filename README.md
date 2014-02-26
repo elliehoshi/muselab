@@ -21,3 +21,11 @@
 * Adobe Photoshop
 * Adobe Illustrator
 * Rhino 3D
+
+<h3>Selected Features Include</h3>
+<hr>
+* Data visualization of categories and idea content
+* The ability for users to create accounts, log in and log out
+* The ability for users to post an idea
+* The authority for users to update and delete their own ideas
+* The option for users to view ideas filtered by category
