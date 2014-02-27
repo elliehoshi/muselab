@@ -16,7 +16,7 @@
 * HTML5
 * CSS3
 
-<h6>Supplemental Technologies Used</h3>
+<h6>Supplemental Technologies Used</h6>
 <hr>
 * Adobe Photoshop
 * Adobe Illustrator
@@ -29,3 +29,6 @@
 * The ability for users to post an idea
 * The authority for users to update and delete their own ideas
 * The option for users to view ideas filtered by category
+* The ability for users to "favorite" ideas *
+* The ability for users to view an index of their "favorited" ideas *
+* A voting counter for each idea *
