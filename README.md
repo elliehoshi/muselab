@@ -32,3 +32,5 @@
 * The ability for users to "favorite" ideas *
 * The ability for users to view an index of their "favorited" ideas *
 * A voting counter for each idea *
+
+<hr>
