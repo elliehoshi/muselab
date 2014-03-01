@@ -29,8 +29,8 @@
 * The ability for users to post an idea
 * The authority for users to update and delete their own ideas
 * The option for users to view ideas filtered by category
-* The ability for users to "favorite" ideas *
-* The ability for users to view an index of their "favorited" ideas *
+* The ability for users to favorite ideas *
+* The ability for users to view an index of their favorite ideas *
 * A voting counter for each idea *
 
 <hr>
