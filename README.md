@@ -34,3 +34,4 @@
 * A voting counter for each idea *
 
 <hr>
+<hr>
