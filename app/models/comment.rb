@@ -12,14 +12,14 @@ class Comment
 
   # NOTE: Comments belong to a user
 
-  commentable = Idea.find(1)
-	comments = commentable.comments.recent.limit(10).all
+ #  commentable = Idea.find(1)
+	# comments = commentable.comments.recent.limit(10).all
 
-  commentable = Idea.create
-	comment = commentable.comments.create
-	comment.title = "First comment."
-	comment.comment = "This is the first comment."
-	comment.save
+ #  commentable = Idea.create
+	# comment = commentable.comments.create
+	# comment.title = "First comment."
+	# comment.comment = "This is the first comment."
+	# comment.save
 
-  belongs_to :user
+ #  belongs_to :user
 end
