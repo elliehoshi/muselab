@@ -18,8 +18,8 @@ class IdeasController < ApplicationController
 	      @ideas = Category.find_by(name: "eCommerce").ideas
 	    elsif params[:stuff] == "myideas"
 	      @ideas = current_user.ideas
-	    else
-	    	@ideas = Idea.all
+	    elsif params[:stuff] == "all"
+	      @ideas = Idea.all
 	  end
 
 	    @stuff = params[:stuff]
