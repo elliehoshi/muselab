@@ -19,7 +19,6 @@ class IdeasController < ApplicationController
 	    elsif params[:stuff] == "myideas"
 	      @ideas = current_user.ideas
 	  end
-	  	@ideas = Idea.all
 	    @stuff = params[:stuff]
   end
 
